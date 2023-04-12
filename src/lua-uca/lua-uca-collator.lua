@@ -1,11 +1,11 @@
 -- object for Unicode string collation
 local math = require "math"
-local tailoring_lib = require "lua-uca.lua-uca-tailoring"
-local reordering_table = require "lua-uca.lua-uca-reordering-table"
+local tailoring_lib = require "citeproc.lua-uca.tailoring"
+local reordering_table = require "citeproc.lua-uca.reordering-table"
 local uni_normalize
 -- in LuaTeX, load the lua-uni-normalize library
 if kpse then
-  uni_normalize = require "lua-uni-normalize"
+  uni_normalize = require "citeproc.lua-uni-algos.normalize"
 end
 
 local collator = {}
@@ -18,7 +18,7 @@ function collator.use_nfc()
   if uni_normalize then
     normalize_method = "NFC"
   else
-    return nil, "lua-uni-normalize is not available"
+    return nil, "citeproc.lua-uni-algos.normalize is not available"
   end
 end
 
@@ -26,7 +26,7 @@ function collator.use_nfd()
   if uni_normalize then
     normalize_method = "NFD"
   else
-    return nil, "lua-uni-normalize is not available"
+    return nil, "citeproc.lua-uni-algos.normalize is not available"
   end
 end
 

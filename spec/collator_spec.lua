@@ -1,5 +1,5 @@
-local ducet = require "lua-uca.lua-uca-ducet"
-local collator = require "lua-uca.lua-uca-collator"
+local ducet = require "citeproc.lua-uca.ducet"
+local collator = require "citeproc.lua-uca.collator"
 local collator_obj = collator.new(ducet)
 
 describe("collator test suite",function()
