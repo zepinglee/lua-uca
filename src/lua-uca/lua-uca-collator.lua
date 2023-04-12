@@ -11,7 +11,8 @@ if kpse then
 else
   tailoring_lib = require "citeproc.lua-uca.tailoring"
   reordering_table = require "citeproc.lua-uca.reordering-table"
-  uni_normalize = require "citeproc.lua-uni-algos.normalize"
+  -- lua-uni-normalize requires LuaTeX
+  -- uni_normalize = require "citeproc.lua-uni-algos.normalize"
 end
 
 local collator = {}
